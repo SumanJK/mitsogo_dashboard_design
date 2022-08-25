@@ -12,10 +12,11 @@ import {
   MenuList,
   Text,
 } from "@chakra-ui/react";
-import React from "react";
-import { CgMenuLeft, CgSearch } from "react-icons/cg";
+import React, { useState } from "react";
+import { CgFileDocument, CgMenuLeft, CgSearch } from "react-icons/cg";
 import { IoMdNotificationsOutline } from "react-icons/io";
-import { MdKeyboardArrowDown } from "react-icons/md";
+import { AiOutlineUser } from "react-icons/ai";
+import { FiLogOut } from "react-icons/fi";
 
 import DrewAvatar from "../assets/profile-pic-02.jpg";
 import AlexaAvatar from "../assets/profile-pic-06.jpg";
@@ -23,27 +24,33 @@ import EvaAvatar from "../assets/profile-pic-05.jpg";
 import profilePic from "../assets/profile-pic-01.jpg";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 
-const Navbar = () => {
+const Navbar = ({toogleStatus}) => {
+
+  const [sidebarToogle, setSidebarToogle]= useState(false);
+
+  const handleToogle= ()=>{
+    toogleStatus(!sidebarToogle)
+    setSidebarToogle(!sidebarToogle);
+  }
+
   return (
     <Flex
       align="center"
       h="70px"
-      w="100%"
       padding="0 20px"
       justify="space-between"
       background="#FFFFFF 0% 0% no-repeat padding-box"
       boxShadow="0px 2px 6px #0000000A"
       opacity="1"
-      position="fixed"
     >
       <Flex
         className="leftNav"
         justify="space-between"
-        w="30%"
-        border="1px solid black"
+        w="40%"
+      
       >
         <Center w="10%">
-          <CgMenuLeft fontSize="24px" color="#7a7a7d" />
+          <CgMenuLeft fontSize="24px" color="#7a7a7d" onClick={handleToogle} />
         </Center>
         <Flex color="#0000001A" align="center" w="80%">
           <Flex
@@ -69,7 +76,7 @@ const Navbar = () => {
         className="rightNav"
         justify="space-between"
         w="12%"
-        border="1px solid black"
+      
       >
         <Flex className="notificationDiv">
           <Menu>
@@ -96,7 +103,7 @@ const Navbar = () => {
                 />
               </Icon>
             </MenuButton>
-            <MenuList w="22rem" border="2px soli black" mt={"1rem"}>
+            <MenuList w="22rem"  mt={"1rem"}>
               <MenuItem h="76px" _hover={{ bg: "#f5faff" }}>
                 <Flex justify="space-between" w="100%">
                   <Center w="15%">
@@ -186,21 +193,34 @@ const Navbar = () => {
           </Menu>
         </Flex>
         <Menu  >
-          <MenuButton as={Flex} align="center" rightIcon={<ChevronDownIcon />}  w='80%' _after={{color:'red'}}>
-            <Flex border='1px solid red' justify="space-around" color='#4D4F5C' >
-              <Flex align="center">
-                <Text fontSize="14px">John Doe</Text>
-                <MdKeyboardArrowDown />
+          <MenuButton as={Flex} align="center"  w='80%'   role="group" >
+            <Flex justify="space-around" align="center" >
+              <Flex align="center" color='#4D4F5C' cursor="pointer">
+                <Text fontSize="14px" >John Doe</Text>
+                <ChevronDownIcon transition='all .3s ease' _groupActive={{transform: 'rotate(180deg)', transition:'all .3s ease'}}/>
               </Flex>
-              <Avatar size="xs" src={profilePic} />
+              <Avatar size="xs" src={profilePic} cursor="pointer"/>
             </Flex>
           </MenuButton>
-          <MenuList>
-            <MenuItem>Download</MenuItem>
-            <MenuItem>Create a Copy</MenuItem>
-            <MenuItem>Mark as Draft</MenuItem>
-            <MenuItem>Delete</MenuItem>
-            <MenuItem>Attend a Workshop</MenuItem>
+          <MenuList color='#4c4b6a' fontSize='16px' w="10rem"  mt={"1rem"}>
+            <MenuItem _hover={{ bg: "#f5faff" }}>
+            <Flex w='100%' align='center' >
+             <AiOutlineUser color='#dcdcdc' fontSize='18px' /> 
+             <Text p='0 15px'>My Profile</Text> 
+            </Flex>
+             </MenuItem>
+            <MenuItem _hover={{ bg: "#f5faff" }}>
+            <Flex w='100%' align='center' >
+             <CgFileDocument color='#dcdcdc' fontSize='18px' /> 
+             <Text p='0 15px'>Billing</Text> 
+            </Flex>
+            </MenuItem>
+            <MenuItem _hover={{ bg: "#f5faff" }}>
+            <Flex w='100%' align='center' >
+             <FiLogOut color='#dcdcdc' fontSize='18px' /> 
+             <Text p='0 15px'>Logout</Text> 
+            </Flex>
+            </MenuItem>
           </MenuList>
         </Menu>
       </Flex>

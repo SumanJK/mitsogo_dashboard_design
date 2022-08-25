@@ -24,14 +24,13 @@ import EvaAvatar from "../assets/profile-pic-05.jpg";
 import profilePic from "../assets/profile-pic-01.jpg";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 
-const Navbar = ({toogleStatus}) => {
+const Navbar = ({ toogleStatus }) => {
+  const [sidebarToogle, setSidebarToogle] = useState(false);
 
-  const [sidebarToogle, setSidebarToogle]= useState(false);
-
-  const handleToogle= ()=>{
-    toogleStatus(!sidebarToogle)
+  const handleToogle = () => {
+    toogleStatus(!sidebarToogle);
     setSidebarToogle(!sidebarToogle);
-  }
+  };
 
   return (
     <Flex
@@ -43,16 +42,16 @@ const Navbar = ({toogleStatus}) => {
       boxShadow="0px 2px 6px #0000000A"
       opacity="1"
     >
-      <Flex
-        className="leftNav"
-        justify="space-between"
-        w="40%"
-      
-      >
+      <Flex className="leftNav" justify="space-between" w="40%" >
         <Center w="10%">
-          <CgMenuLeft fontSize="24px" color="#7a7a7d" onClick={handleToogle} />
+          <CgMenuLeft
+            fontSize="24px"
+            color="#7a7a7d"
+            onClick={handleToogle}
+            cursor="pointer"
+          />
         </Center>
-        <Flex color="#0000001A" align="center" w="80%">
+        <Flex color="#0000001A" align="center" w="80%" >
           <Flex
             bg="transparent"
             border="none"
@@ -63,6 +62,7 @@ const Navbar = ({toogleStatus}) => {
             <CgSearch fontSize="24px" />
           </Flex>
           <Input
+          display={['none','flex']}
             type="text"
             placeholder="Search transactions, invoices or help"
             fontSize="16px"
@@ -75,27 +75,40 @@ const Navbar = ({toogleStatus}) => {
       <Flex
         className="rightNav"
         justify="space-between"
-        w="12%"
-      
+        align="center"
+        w={["5rem", "180px"]}
+        border="1px solid red"
+        h="40px"
       >
         <Flex className="notificationDiv">
           <Menu>
             <MenuButton
               size="xs"
-              as={Button}
+              // height="1.5rem"
+              // w="1.5rem"
+              p=".2rem"
+              align="center"
+              justify="center"
+              as={Flex}
               rounded={"full"}
               cursor={"pointer"}
               bg="#fff"
-              _hover={{ bg: "#f0f0f0" }}
+              _hover={{ bg: "#f0f0f0", transition: "all .3s ease" }}
               _active={{ bg: "#f0f0f0" }}
               position="relative"
+              role="group"
+              transition="all .3s ease"
             >
               <IoMdNotificationsOutline fontSize="20px" color="#c3c3c3" />
               <Icon
+                transition="all .2s ease"
+                _groupActive={{ opacity: 0, transition: "all .2s ease" }}
+                w=".6rem"
+                h=".6rem"
                 viewBox="0 0 200 200"
                 color="green.400"
                 position="absolute"
-                top="0"
+                top="2px"
               >
                 <path
                   fill="currentColor"
@@ -103,7 +116,7 @@ const Navbar = ({toogleStatus}) => {
                 />
               </Icon>
             </MenuButton>
-            <MenuList w="22rem"  mt={"1rem"}>
+            <MenuList w="22rem" mt={"1rem"}>
               <MenuItem h="76px" _hover={{ bg: "#f5faff" }}>
                 <Flex justify="space-between" w="100%">
                   <Center w="15%">
@@ -192,34 +205,45 @@ const Navbar = ({toogleStatus}) => {
             </MenuList>
           </Menu>
         </Flex>
-        <Menu  >
-          <MenuButton as={Flex} align="center"  w='80%'   role="group" >
-            <Flex justify="space-around" align="center" >
-              <Flex align="center" color='#4D4F5C' cursor="pointer">
-                <Text fontSize="14px" >John Doe</Text>
-                <ChevronDownIcon transition='all .3s ease' _groupActive={{transform: 'rotate(180deg)', transition:'all .3s ease'}}/>
+        <Menu>
+          <MenuButton as={Flex} align="center" w="80%" role="group">
+            <Flex justify="space-around" align="center">
+              <Flex align="center" color="#4D4F5C" display={['none','flex']}>
+                <Text
+                  fontSize="14px"
+                  cursor="pointer"
+                >
+                  John Doe
+                </Text>
+                <ChevronDownIcon
+                  transition="all .3s ease"
+                  _groupActive={{
+                    transform: "rotate(180deg)",
+                    transition: "all .3s ease",
+                  }}
+                />
               </Flex>
-              <Avatar size="xs" src={profilePic} cursor="pointer"/>
+              <Avatar size="xs" src={profilePic} />
             </Flex>
           </MenuButton>
-          <MenuList color='#4c4b6a' fontSize='16px' w="10rem"  mt={"1rem"}>
+          <MenuList color="#4c4b6a" fontSize="16px" w="10rem" mt={"1rem"}>
             <MenuItem _hover={{ bg: "#f5faff" }}>
-            <Flex w='100%' align='center' >
-             <AiOutlineUser color='#dcdcdc' fontSize='18px' /> 
-             <Text p='0 15px'>My Profile</Text> 
-            </Flex>
-             </MenuItem>
-            <MenuItem _hover={{ bg: "#f5faff" }}>
-            <Flex w='100%' align='center' >
-             <CgFileDocument color='#dcdcdc' fontSize='18px' /> 
-             <Text p='0 15px'>Billing</Text> 
-            </Flex>
+              <Flex w="100%" align="center">
+                <AiOutlineUser color="#dcdcdc" fontSize="18px" />
+                <Text p="0 15px">My Profile</Text>
+              </Flex>
             </MenuItem>
             <MenuItem _hover={{ bg: "#f5faff" }}>
-            <Flex w='100%' align='center' >
-             <FiLogOut color='#dcdcdc' fontSize='18px' /> 
-             <Text p='0 15px'>Logout</Text> 
-            </Flex>
+              <Flex w="100%" align="center">
+                <CgFileDocument color="#dcdcdc" fontSize="18px" />
+                <Text p="0 15px">Billing</Text>
+              </Flex>
+            </MenuItem>
+            <MenuItem _hover={{ bg: "#f5faff" }}>
+              <Flex w="100%" align="center">
+                <FiLogOut color="#dcdcdc" fontSize="18px" />
+                <Text p="0 15px">Logout</Text>
+              </Flex>
             </MenuItem>
           </MenuList>
         </Menu>

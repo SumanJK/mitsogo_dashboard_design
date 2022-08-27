@@ -36,21 +36,30 @@ const Navbar = ({ toogleStatus }) => {
       align="center"
       h="70px"
       padding="0 20px"
-      justify="space-between"
+      justify={"end"}
       background="#FFFFFF 0% 0% no-repeat padding-box"
       boxShadow="0px 2px 6px #0000000A"
       opacity="1"
+      position="relative"
     >
-      <Flex className="leftNav" justify="space-between" w="40%" >
-        <Center w="10%">
-          <CgMenuLeft
-            fontSize="24px"
-            color="#7a7a7d"
-            onClick={handleToogle}
-            cursor="pointer"
-          />
-        </Center>
-        <Flex color="#0000001A" align="center" w="80%" >
+      <Center w="4rem" position="absolute" left="0">
+        <CgMenuLeft
+          fontSize="24px"
+          color="#7a7a7d"
+          onClick={handleToogle}
+          cursor="pointer"
+        />
+      </Center>
+      <Flex
+        className="leftNav"
+        justify="space-between"
+        w={["10%", "80%"]}
+        // display={[
+        //   sidebarToogle ? "none" : "flex",
+        //   sidebarToogle ? "flex" : "flex",
+        // ]}
+      >
+        <Flex color="#0000001A" align="center" w="80%">
           <Flex
             bg="transparent"
             border="none"
@@ -58,10 +67,10 @@ const Navbar = ({ toogleStatus }) => {
             padding="0"
             align="center"
           >
-            <CgSearch fontSize="24px" />
+            <CgSearch fontSize="20px" />
           </Flex>
           <Input
-          display={['none','flex']}
+            display={["none", "flex"]}
             type="text"
             placeholder="Search transactions, invoices or help"
             fontSize="16px"
@@ -72,15 +81,15 @@ const Navbar = ({ toogleStatus }) => {
         </Flex>
       </Flex>
       <Flex
+        // display={[sidebarToogle? "none" : 'flex', sidebarToogle? "flex" : 'flex']}
         className="rightNav"
         justify="space-between"
         align="center"
         w={["5rem", "180px"]}
-        border="1px solid red"
         h="40px"
       >
         <Flex className="notificationDiv">
-          <Menu>
+          <Menu w="100%">
             <MenuButton
               size="xs"
               // height="1.5rem"
@@ -115,32 +124,32 @@ const Navbar = ({ toogleStatus }) => {
                 />
               </Icon>
             </MenuButton>
-            <MenuList w="22rem" mt={"1rem"}>
-              <MenuItem h="76px" _hover={{ bg: "#f5faff" }}>
+            <MenuList margin="auto" w={["20rem", "22rem"]} mt={"1rem"}>
+              <MenuItem h="76px" w="100%" _hover={{ bg: "#f5faff" }}>
                 <Flex justify="space-between" w="100%">
-                  <Center w="15%">
+                  <Center w={["12%", "15%"]}>
                     <Avatar
-                      h="2.4rem"
-                      w="2.4rem"
+                      h={["2rem", "2.4rem"]}
+                      w={["2rem", "2.4rem"]}
                       name="Drew"
                       src={DrewAvatar}
                     />
                   </Center>
                   <Box w="70%" color="#43425D" p="0 .5rem">
                     <Text
-                      fontSize="14px"
+                      fontSize={["12px", "14px"]}
                       letterSpacing="0px"
                       color="#4D4F5C"
                       fontWeight={"600"}
                     >
                       Bravid Kames
                     </Text>
-                    <Text opacity="50%" fontSize="12px">
+                    <Text opacity="50%" fontSize={["10px", "12px"]}>
                       Assigned you on the call with Sara
                     </Text>
                   </Box>
                   <Box w="20%">
-                    <Text opacity="50%" fontSize="12px">
+                    <Text opacity="50%" fontSize={["10px", "12px"]}>
                       2 min ago
                     </Text>
                   </Box>
@@ -150,27 +159,27 @@ const Navbar = ({ toogleStatus }) => {
                 <Flex justify="space-between" w="100%">
                   <Center w="15%">
                     <Avatar
-                      h="2.4rem"
-                      w="2.4rem"
+                      h={["2rem", "2.4rem"]}
+                      w={["2rem", "2.4rem"]}
                       name="Alexa"
                       src={AlexaAvatar}
                     />
                   </Center>
                   <Box w="70%" color="#43425D" p="0 .5rem">
                     <Text
-                      fontSize="14px"
+                      fontSize={["12px", "14px"]}
                       letterSpacing="0px"
                       color="#4D4F5C"
                       fontWeight={"600"}
                     >
                       Alexa Marry
                     </Text>
-                    <Text opacity="50%" fontSize="12px">
+                    <Text opacity="50%" fontSize={["10px", "12px"]}>
                       Marked the task New UI as done
                     </Text>
                   </Box>
                   <Box w="20%">
-                    <Text opacity="50%" fontSize="12px">
+                    <Text opacity="50%" fontSize={["10px", "12px"]}>
                       5 min ago
                     </Text>
                   </Box>
@@ -179,23 +188,28 @@ const Navbar = ({ toogleStatus }) => {
               <MenuItem h="76px" _hover={{ bg: "#f5faff" }}>
                 <Flex justify="space-between" w="100%">
                   <Center w="15%">
-                    <Avatar h="2.4rem" w="2.4rem" name="Eva" src={EvaAvatar} />
+                    <Avatar
+                      h={["2rem", "2.4rem"]}
+                      w={["2rem", "2.4rem"]}
+                      name="Eva"
+                      src={EvaAvatar}
+                    />
                   </Center>
                   <Box w="70%" color="#43425D" p="0 .5rem">
                     <Text
-                      fontSize="14px"
+                      fontSize={["12px", "14px"]}
                       letterSpacing="0px"
                       color="#4D4F5C"
                       fontWeight={"600"}
                     >
                       Eva Maria
                     </Text>
-                    <Text opacity="50%" fontSize="12px">
+                    <Text opacity="50%" fontSize={["10px", "12px"]}>
                       Added a new comment on Sales task
                     </Text>
                   </Box>
                   <Box w="20%">
-                    <Text opacity="50%" fontSize="12px">
+                    <Text opacity="50%" fontSize={["10px", "12px"]}>
                       10 min ago
                     </Text>
                   </Box>
@@ -207,11 +221,8 @@ const Navbar = ({ toogleStatus }) => {
         <Menu>
           <MenuButton as={Flex} align="center" w="80%" role="group">
             <Flex justify="space-around" align="center">
-              <Flex align="center" color="#4D4F5C" display={['none','flex']}>
-                <Text
-                  fontSize="14px"
-                  cursor="pointer"
-                >
+              <Flex align="center" color="#4D4F5C" display={["none", "flex"]}>
+                <Text fontSize={["12px", "14px"]} cursor="pointer">
                   John Doe
                 </Text>
                 <ChevronDownIcon
@@ -228,20 +239,20 @@ const Navbar = ({ toogleStatus }) => {
           <MenuList color="#4c4b6a" fontSize="16px" w="10rem" mt={"1rem"}>
             <MenuItem _hover={{ bg: "#f5faff" }}>
               <Flex w="100%" align="center">
-                <AiOutlineUser color="#dcdcdc" fontSize="18px" />
-                <Text p="0 15px">My Profile</Text>
+                <AiOutlineUser color="#dcdcdc" fontSize={["14px", "16px"]} />
+                <Text p="0 15px" fontSize={["14px", "16px"]}>My Profile</Text>
               </Flex>
             </MenuItem>
             <MenuItem _hover={{ bg: "#f5faff" }}>
               <Flex w="100%" align="center">
-                <CgFileDocument color="#dcdcdc" fontSize="18px" />
-                <Text p="0 15px">Billing</Text>
+                <CgFileDocument color="#dcdcdc" fontSize={["14px", "16px"]} />
+                <Text p="0 15px" fontSize={["14px", "16px"]}>Billing</Text>
               </Flex>
             </MenuItem>
             <MenuItem _hover={{ bg: "#f5faff" }}>
               <Flex w="100%" align="center">
-                <FiLogOut color="#dcdcdc" fontSize="18px" />
-                <Text p="0 15px">Logout</Text>
+                <FiLogOut color="#dcdcdc" fontSize={["14px", "16px"]} />
+                <Text p="0 15px" fontSize={["14px", "16px"]}>Logout</Text>
               </Flex>
             </MenuItem>
           </MenuList>

@@ -1,4 +1,4 @@
-import { Box, Flex, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, Image, Tag, Text } from "@chakra-ui/react";
 import React from "react";
 
 import logo from "../assets/acmeLogo.svg";
@@ -12,13 +12,14 @@ const Sidebar = ({ sidebarStatus }) => {
   return (
     <Box
       className="sidebar"
-      w={sidebarStatus ? "16%" : "0"}
+      minW={[sidebarStatus ? "86%" : "0",sidebarStatus ? "16%" : "0"]}
+      w={[sidebarStatus ? "86%" : "0",sidebarStatus ? "18%" : "0"]}
       bg="#43425D"
-      transition="all .4s ease"
+      transition="all .3s ease"
       color="white"
     >
       <Flex align="center" h="70px" w="100%" px="1.2rem" bg="#3C3B54">
-        <Image src={logo} width="50%" />
+        <Image src={logo} w={['30%',"50%"]} />
       </Flex>
 
       <Box>
@@ -30,7 +31,7 @@ const Sidebar = ({ sidebarStatus }) => {
           _active={{ borderLeft: "3px solid #fff" }}
           cursor="pointer"
         >
-          <Image w="10%" src={home} />
+          <Image w={"10%"} src={home} />
           <Text px=".8rem">Home</Text>
         </Flex>
         <Flex
@@ -52,8 +53,20 @@ const Sidebar = ({ sidebarStatus }) => {
           _active={{ borderLeft: "3px solid #fff" }}
           cursor="pointer"
         >
-          <Image w="10%" src={inbox} />
-          <Text px=".8rem">Inbox</Text>
+          <Flex w='10rem' align="center"  h="54px">
+            <Image w={["16%","14%"]} src={inbox} />
+            <Text px=".8rem">Inbox</Text>
+          </Flex>
+          <Flex>
+          <Tag
+                size={['xs','sm']}
+                p='.05rem .5rem'
+                bg='tomato'
+                ml={[10,2]}
+                color={'white'}>
+                New
+              </Tag>
+          </Flex>
         </Flex>
         <Flex
           h="54px"

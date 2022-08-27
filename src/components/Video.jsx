@@ -5,8 +5,8 @@ import { BsFillPlayFill } from "react-icons/bs";
 
 const Video = () => {
   return (
-    <Box p=" .6rem 1rem" color="#4D4F5C" h="100%">
-      <Flex align="center" justify="space-between" h="10%" mb="2%">
+    <Box p=" .5rem 1rem" color="#4D4F5C" h="100%">
+      <Flex align="center" justify="space-between" h="10%" m="1%" mb='2%'>
         <Text>Product Video</Text>
         <BiDotsVerticalRounded fontSize="20px" color="#A4AFB7" />
       </Flex>
@@ -41,7 +41,7 @@ const Video = () => {
           h="3.5rem"
           borderRadius="50%"
           transition="all .3s ease"
-          _groupHover={{ transform: "scale(1.08)", transition: "all .3s ease" }}
+          _groupHover={{ transform: "scale(1.1)", transition: "all .3s ease" }}
         ></Flex>
         <Center
           position="absolute"

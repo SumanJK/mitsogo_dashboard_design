@@ -1,4 +1,4 @@
-import { Box, Flex, Grid, GridItem, Text } from "@chakra-ui/react";
+import { Box, Flex, Grid, GridItem, Text, VStack } from "@chakra-ui/react";
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
@@ -21,11 +21,10 @@ const Dashboard = () => {
   return (
     <Flex
       bg="#3C3B54"
-      minH="100vh"
+      h="100vh"
       // minW='100vw'
       w={[sidebarStatus ? "100%" : "100%"]}
-      // overflow="hidden"
-      
+      overflow="hidden"
     >
       <Sidebar sidebarStatus={sidebarStatus} />
 
@@ -52,15 +51,15 @@ const Dashboard = () => {
             minW='100%'
             h={['48px']}
           >
-            <Text fontWeight="600" fontSize="20" color='#4D4F5C'>
+            <Text fontWeight="600" fontSize={['16px',"20"]} color='#4D4F5C'>
               Overview
             </Text>
             <Flex
               as="button"
               bg="#6763E3"
               borderRadius={"5px"}
-              h={["2.5rem",'3rem']}
-              w={['8rem','8rem']}
+              h={["2.4rem",'3rem']}
+              w={['7rem','8rem']}
               align="center"
               justify="space-between"
               color="white"
@@ -68,14 +67,14 @@ const Dashboard = () => {
               // border='1px solid black'
               _hover={{ bg: "#5e59d5" }}
             >
-              <Text fontSize="16" fontWeight="500">
+              <Text fontSize={['14px',"16px"]} fontWeight="500">
                 Add Funds
               </Text>
               <Flex
                 bg="#514DDC"
                 rounded="full"
-                h="1rem"
-                w="1rem"
+                h={[".8rem","1rem"]}
+                w={[".8rem","1rem"]}
                 align="center"
                 justify="center"
               >
@@ -118,15 +117,15 @@ const Dashboard = () => {
             <GridItem borderRadius="10px" overflow='hidden' bg="orange.300" area={"sales"}>
             <Flex p='2rem' minW={['15rem','22rem']} h='10rem'></Flex>
             </GridItem>
-            <GridItem borderRadius="10px" overflow='hidden' bg="#fff" area={"profile"} maxH='40rem '>
-              <ProfileCard />
-            </GridItem>
             <GridItem borderRadius="10px" overflow='hidden' bg="#fff" area={"referrer"}>
               <TableList/>
             </GridItem>
-            <GridItem borderRadius="10px" overflow='hidden' bg="white" area={"video"}  h='15rem'>
-              <Video/>
-            </GridItem>
+              <GridItem borderRadius="10px" overflow='hidden' bg="#fff" area={"profile"} >
+                <ProfileCard />
+              </GridItem>
+              <GridItem borderRadius="10px" overflow='hidden' bg="white" area={"video"}  h='15rem' py='.4rem'>
+                <Video/>
+              </GridItem>
           </Grid>
           </Box>
         </div>

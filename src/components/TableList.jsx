@@ -14,13 +14,13 @@ import { tableData } from '../Data/TableData'
 
 const TableList = () => {
 
-  const [tableHeight, setTableHeight] = useState(false);
+
   return (
-    <Box p='1rem' pb='2rem'  position='relative'>
+    <Box p='1rem' pb='2.5rem'  position='relative'>
       <Flex mb='1rem'>
         <Text>Referrer</Text>
       </Flex>
-      <TableContainer   h={tableHeight ? '100%' : '20rem'} >
+      <TableContainer   h='20rem' >
   <Table size='sm' color='#4D4F5C' >
     <Thead bg='#F5F6FA' h='50px' >
       <Tr >
@@ -46,12 +46,11 @@ const TableList = () => {
     </Tbody >
   </Table>
 </TableContainer>
-    {!tableHeight && 
     
-      <Flex  position='absolute' bottom='2'>
-        <Link color='#0b4cff' fontSize='14px' px='1rem' onClick={()=>{setTableHeight(true)}} >Show more</Link> 
+      <Flex  position='absolute' bottom='3'>
+        <Link color='#0b4cff' fontSize='14px' px='1rem' >Show more</Link> 
       </Flex>
-    }
+
     </Box>
   )
 }

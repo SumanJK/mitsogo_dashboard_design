@@ -40,17 +40,17 @@ const ProfileCard = () => {
               bottom="0"
               right="0"
               borderRadius="50%"
-              // border="2px solid white"
+              border="2px solid white"
             >
               <HiPencil color="#fff" fontSize="12px" />
             </Center>
           </Box>
         </Flex>
         <VStack justify="center" w="100%" my='.6rem' gap='.4rem' >
-          <Text fontWeight="700" fontSize="16px">
+          <Text fontWeight="700" fontSize={['14px',"16px"]}>
             Nick Herasimenka
           </Text>
-          <Text fontWeight="500" fontSize="14px" color="#A4AFB7">
+          <Text fontWeight="500" fontSize={['12px',"14px"]} color="#A4AFB7">
             United States
           </Text>
           <Flex w='100%' justify="center">
@@ -71,44 +71,44 @@ const ProfileCard = () => {
         </Flex>
         <VStack  mt='2rem' gap={'.5rem'} >
           <Flex w='100%' >
-            <Flex w='15%'>
+            <Flex w={['18%','15%']}>
               <Center>
                 <Avatar size='sm' src={DrewAvatar}/>
               </Center>
             </Flex>
               <Box w='80%'  textAlign='left'>
-                <Text fontWeight='600' fontSize='14'>Drew James</Text>
+                <Text fontWeight='600' fontSize={['13px',"14px"]}>Drew James</Text>
                 <Flex justify='space-between' color='#A4AFB7'>
-                  <Text fontSize='12px'>United States</Text>
-                  <Text fontSize='12px'>Mobile: 9937903731</Text>
+                  <Text fontSize={['11px',"12px"]}>United States</Text>
+                  <Text fontSize={['11px',"12px"]}>Mob: 9937903731</Text>
                 </Flex>
               </Box>
           </Flex>
           <Flex w='100%' align='center' >
-            <Flex w='15%'>
+            <Flex w={['18%','15%']}>
               <Center>
                 <Avatar size='sm' src={BavidAvatar}/>
               </Center>
             </Flex>
-              <Box w='80%'  textAlign='left'>
-                <Text fontWeight='600' fontSize='14'>Bavid Kames</Text>
+              <Box w='80%'  textAlign='left ' >
+                <Text fontWeight='600' fontSize={['13px',"14px"]}>Bavid Kames</Text>
                 <Flex justify='space-between' color='#A4AFB7'>
-                  <Text fontSize='12px'>United States</Text>
-                  <Text fontSize='12px'>Mobile: 9937903731</Text>
+                  <Text fontSize={['11px',"12px"]}>United States</Text>
+                  <Text fontSize={['11px',"12px"]} >Mob: 9937903731</Text>
                 </Flex>
               </Box>
           </Flex>
           <Flex w='100%' >
-            <Flex w='15%'>
+            <Flex w={['18%','15%']}>
               <Center>
                 <Avatar size='sm' src={LavidAvatar}/>
               </Center>
             </Flex>
               <Box w='80%'  textAlign='left'>
-                <Text fontWeight='600' fontSize='14'>Lavid Emes</Text>
+                <Text fontWeight='600' fontSize={['13px',"14px"]}>Lavid Emes</Text>
                 <Flex justify='space-between' color='#A4AFB7'>
-                  <Text fontSize='12px'>United States</Text>
-                  <Text fontSize='12px'>Mobile: 9937903731</Text>
+                  <Text fontSize={['11px',"12px"]}>United States</Text>
+                  <Text fontSize={['11px',"12px"]}>Mob: 9937903731</Text>
                 </Flex>
               </Box>
           </Flex>

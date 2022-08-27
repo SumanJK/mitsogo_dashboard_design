@@ -28,10 +28,10 @@ const Sidebar = ({ sidebarStatus }) => {
           align="center"
           px="1rem"
           _hover={{ bg: "#3C3B54" }}
-          _active={{ borderLeft: "3px solid #fff" }}
+          _active={{ borderLeft: "3px solid #8962ff" }}
           cursor="pointer"
         >
-          <Image w={"10%"} src={home} />
+          <Image w="10%" src={home} />
           <Text px=".8rem">Home</Text>
         </Flex>
         <Flex
@@ -39,7 +39,7 @@ const Sidebar = ({ sidebarStatus }) => {
           align="center"
           px="1rem"
           _hover={{ bg: "#3C3B54" }}
-          _active={{ borderLeft: "3px solid #fff" }}
+          _active={{ borderLeft: "3px solid #8962ff" }}
           cursor="pointer"
         >
           <Image w="10%" src={stat} />
@@ -50,11 +50,11 @@ const Sidebar = ({ sidebarStatus }) => {
           align="center"
           px="1rem"
           _hover={{ bg: "#3C3B54" }}
-          _active={{ borderLeft: "3px solid #fff" }}
+          _active={{ borderLeft: "3px solid #8962ff" }}
           cursor="pointer"
         >
           <Flex w='10rem' align="center"  h="54px">
-            <Image w={["16%","14%"]} src={inbox} />
+            <Image w={["17%","14%"]} src={inbox} />
             <Text px=".8rem">Inbox</Text>
           </Flex>
           <Flex>
@@ -73,7 +73,7 @@ const Sidebar = ({ sidebarStatus }) => {
           align="center"
           px="1rem"
           _hover={{ bg: "#3C3B54" }}
-          _active={{ borderLeft: "3px solid #fff" }}
+          _active={{ borderLeft: "3px solid #8962ff" }}
           cursor="pointer"
         >
           <Image w="10%" src={list} />
@@ -84,7 +84,7 @@ const Sidebar = ({ sidebarStatus }) => {
           align="center"
           px="1rem"
           _hover={{ bg: "#3C3B54" }}
-          _active={{ borderLeft: "3px solid #fff" }}
+          _active={{ borderLeft: "3px solid #8962ff" }}
           cursor="pointer"
         >
           <Image w="10%" src={setting} />

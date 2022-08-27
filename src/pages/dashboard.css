@@ -1,7 +1,7 @@
 .content{
 
-    min-height: 91vh;
   overflow: scroll;
+  height: 91vh;
   overflow-x: hidden;
   scroll-behavior: smooth;
   background: #F0F0F7;

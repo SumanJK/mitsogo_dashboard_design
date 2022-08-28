@@ -1,4 +1,4 @@
-import { Box, Center, Flex, Grid, GridItem, Select, Text, VStack } from "@chakra-ui/react";
+import { Box, Center, Flex, Grid, GridItem, Select, Text } from "@chakra-ui/react";
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
@@ -24,7 +24,6 @@ const Dashboard = () => {
     <Flex
       bg="#3C3B54"
       h="100vh"
-      // minW='100vw'
       w={[sidebarStatus ? "100%" : "100%"]}
       overflow="hidden"
     >
@@ -32,7 +31,6 @@ const Dashboard = () => {
 
       <Box
         className="mainDiv"
-        // w={[sidebarStatus ? "20%" : "100%",sidebarStatus ? "100%" : "100%"]}
         bg="white"
         borderTopLeftRadius={[0, sidebarStatus ? "40px" : "0"]}
         overflow="hidden"
@@ -106,14 +104,14 @@ const Dashboard = () => {
                 borderRadius="10px"
                 overflow="hidden"
                 area={"stats"}
-                h="22rem"
+                h={['16rem',"22rem"]}
                 p="1rem 0"
                 bg="white"
               >
                 <Flex h="100%" w="100%" p="0" direction="column" align='center' >
                   <Flex justify="space-between" w='100%' px='1.4rem' mb='1rem'>
                     <Text>Statistics</Text>
-                    <Select placeholder="Last 6 months" w='35%' variant='unstyled' fontSize='14px'>
+                    <Select placeholder="Last 6 months" w={['45%','35%']} variant='unstyled' fontSize='14px'>
                       <option value="1">Last 1 year</option>
                       <option value="5">Last 5 years</option>
                       <option value="10">Last 10 years</option>
@@ -127,7 +125,7 @@ const Dashboard = () => {
               <GridItem
                 borderRadius="10px"
                 overflow="hidden"
-                h="22rem"
+                h={['16rem',"22rem"]}
                 p="1rem 0"
                 bg="white"
                 area={"sales"}

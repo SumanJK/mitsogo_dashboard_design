@@ -2,8 +2,6 @@ import React from 'react'
 import {Line} from 'react-chartjs-2'
 import {MDBContainer} from 'mdbreact'
 
-import Chart from 'chart.js/auto';
-
 
 
 class AreaChart extends React.Component

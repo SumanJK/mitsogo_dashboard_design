@@ -29,7 +29,7 @@ const ProfileCard = () => {
   return (
     <Box  color="#4D4F5C" >
       <Box  py='1.4rem '> 
-        <Flex h="80px" justify="center">
+        <Flex h="80px" justify="center" mt='1rem'>
           <Box w="80px" position="relative" >
             <Avatar size='sm' src={profilePic} w="100%" h="100%" />
             <Center

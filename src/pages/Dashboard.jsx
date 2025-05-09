@@ -1,4 +1,12 @@
-import { Box, Center, Flex, Grid, GridItem, Select, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Center,
+  Flex,
+  Grid,
+  GridItem,
+  Select,
+  Text,
+} from "@chakra-ui/react";
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
@@ -14,8 +22,6 @@ import PieChart from "../components/PieChart";
 
 const Dashboard = () => {
   const [sidebarStatus, setSidebarStatus] = useState(false);
-  console.log('comment added')
-
   const toogleStatus = (value) => {
     console.log(value, "value===");
     setSidebarStatus(value);
@@ -105,20 +111,25 @@ const Dashboard = () => {
                 borderRadius="10px"
                 overflow="hidden"
                 area={"stats"}
-                h={['16rem',"22rem"]}
+                h={["16rem", "22rem"]}
                 p="1rem 0"
                 bg="white"
               >
-                <Flex h="100%" w="100%" p="0" direction="column" align='center' >
-                  <Flex justify="space-between" w='100%' px='1.4rem' mb='1rem'>
+                <Flex h="100%" w="100%" p="0" direction="column" align="center">
+                  <Flex justify="space-between" w="100%" px="1.4rem" mb="1rem">
                     <Text>Statistics</Text>
-                    <Select placeholder="Last 6 months" w={['45%','35%']} variant='unstyled' fontSize='14px'>
+                    <Select
+                      placeholder="Last 6 months"
+                      w={["45%", "35%"]}
+                      variant="unstyled"
+                      fontSize="14px"
+                    >
                       <option value="1">Last 1 year</option>
                       <option value="5">Last 5 years</option>
                       <option value="10">Last 10 years</option>
                     </Select>
                   </Flex>
-                  <Center w='100%' h='20rem' >
+                  <Center w="100%" h="20rem">
                     <AreaChart />
                   </Center>
                 </Flex>
@@ -126,16 +137,17 @@ const Dashboard = () => {
               <GridItem
                 borderRadius="10px"
                 overflow="hidden"
-                h={['16rem',"22rem"]}
+                h={["16rem", "22rem"]}
                 p="1rem 0"
                 bg="white"
                 area={"sales"}
               >
-                <Flex h="100%" w="100%"  direction="column" align='center'>
-                  <Text px='1rem' w='100%' textAlign='left'>Sales Distribution</Text>
-                  <Center w='100%' h='18rem' >
-
-                  <PieChart/>
+                <Flex h="100%" w="100%" direction="column" align="center">
+                  <Text px="1rem" w="100%" textAlign="left">
+                    Sales Distribution
+                  </Text>
+                  <Center w="100%" h="18rem">
+                    <PieChart />
                   </Center>
                 </Flex>
               </GridItem>

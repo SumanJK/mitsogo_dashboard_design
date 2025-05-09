@@ -14,6 +14,7 @@ import PieChart from "../components/PieChart";
 
 const Dashboard = () => {
   const [sidebarStatus, setSidebarStatus] = useState(false);
+  console.log('comment added')
 
   const toogleStatus = (value) => {
     console.log(value, "value===");
